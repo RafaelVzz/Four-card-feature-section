@@ -117,7 +117,7 @@ h1{
     .contenedor-principal{
         display: flex;
         flex-direction: column;
-        
+        width: 90%;
     }
 
     .caja-base{
