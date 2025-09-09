@@ -113,14 +113,14 @@ h1{
     grid-row: 3 / 4;
 }
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 500px){
     .contenedor-principal{
         display: flex;
         flex-direction: column;
-        width: 90%;
     }
 
     .caja-base{
+        width: 90%;
         margin-top: 20px;
     }
 }
