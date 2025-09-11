@@ -14,8 +14,12 @@ div, body{
 
 .encabezado{
     max-width: 575px;
+    width: 100%;
     margin: 0 auto;
     margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .texto_claro{
@@ -35,14 +39,13 @@ div, body{
 }
 
 h1{
-    text-align: center;
     margin: 0;
     font-size: xx-large;
 }
 
 .encabezado p{
-    text-align: center;
     color: hsl(212, 6%, 44%);
+    text-align: center;
 }
 
 .contenedor-principal{
@@ -60,6 +63,9 @@ h1{
 }
 
 .caja-base{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: white;
     width: 445px;
     height: 315px;
@@ -70,9 +76,8 @@ h1{
 }
 
 .caja-base img{
-    float: right;
-    margin: 0;
-    margin-top: 45px;
+    width: 64px;
+    align-self: flex-end;
 }
 
 .caja-base p{
@@ -113,14 +118,56 @@ h1{
     grid-row: 3 / 4;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 405px){
+    .encabezado h1, p{
+        text-align: center;
+        text-wrap: pretty;
+    }
+}
+
+@media screen and (max-width: 915px){
     .contenedor-principal{
         display: flex;
         flex-direction: column;
+        margin-bottom: 25px;
     }
 
     .caja-base{
         width: 90%;
         margin-top: 20px;
     }
+
+    .encabezado h1{
+        text-wrap: pretty;
+    }
+}
+
+@media screen and (max-width: 1350px){
+    .contenedor-principal{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        width: fit-content;
+        grid-template-areas: 
+        "supervisor team-builder"
+        "calculator karma";
+    }
+
+    .supervisor{
+        grid-area: supervisor;
+    }
+
+    .team-builder{
+        grid-area: team-builder;
+    }
+
+    .calculator{
+        grid-area: calculator;
+    }
+
+    .karma{
+        grid-area: karma;
+    }
+
+
+
 }
